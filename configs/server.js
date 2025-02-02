@@ -18,7 +18,7 @@ const configurarMiddlewares = (app) => {
 }
 
 const configurarRutas = (app) => {
-    const usuarioPath = '/adoptionSystem/v1/users';
+    const usuarioPath = '/adoptionSystem/v1/auth';
 
     app.use(usuarioPath, authRoutes);
 }

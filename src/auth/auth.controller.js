@@ -29,7 +29,7 @@ export const login = async (req, res) => {
             });
         }
 
-        const token = await generarJWT(usario.id);
+        const token = await generarJWT(usuario.id);
 
         res.status(200).json({
             msg: 'Login Ok!!!',
@@ -50,7 +50,7 @@ export const register = async (req, res) => {
     const { nombre, correo, password, role, phone} = req.body;
     const user = new Usuario({ nombre, correo, password, role, phone});
 
-    const genSalt = bcryptjs.genSaltSync();
+    const salt = bcryptjs.genSaltSync();
     user.password = bcryptjs.hashSync(password, salt);
 
     await user.save();
