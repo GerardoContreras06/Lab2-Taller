@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken";
+import jwt from 'jsonwebtoken';
 
 export const generarJWT = (uid = ' ') => {
 
@@ -15,6 +15,6 @@ export const generarJWT = (uid = ' ') => {
             (err, token) => {
                 err ? (console.log(err), reject('No se pudo generar el token')) : resolve(token);
             }
-        );   
+        );
     });
 }

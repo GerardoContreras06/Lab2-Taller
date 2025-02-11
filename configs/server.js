@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import express from 'express';
 import cors from 'cors';
@@ -6,9 +6,11 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validar-cant-peticiones.js';
-import authRoutes from '../src/auth/auth.routes.js'
+import authRoutes from '../src/auth/auth.routes.js';
+import userRoutes from '../src/users/user.Routes.js';
+import petRoutes from '../src/pet/pet.routes.js';
 
-const configurarMiddlewares = (app) => {
+const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false }));
     app.use(cors());
     app.use(express.json());
@@ -17,10 +19,10 @@ const configurarMiddlewares = (app) => {
     app.use(limiter);
 }
 
-const configurarRutas = (app) => {
-    const usuarioPath = '/adoptionSystem/v1/auth';
-
-    app.use(usuarioPath, authRoutes);
+const routes = (app) => {
+    app.use("/adoptionSystem/v1/auth", authRoutes);
+    app.use("/adoptionSystem/v1/users", userRoutes);
+    app.use("/adoptionSystem/v1/pets", petRoutes);
 }
 
 const conectarDB = async () => {
@@ -33,16 +35,17 @@ const conectarDB = async () => {
     }
 }
 
- export const iniciarServidor = async () => {
+export const initServer = async () => {
     const app = express();
-    const port = process.env.PORT || 3000;
+    const port = process.env.PORT || 3002;
 
-    await conectarDB();
-
-    configurarMiddlewares(app);
-    configurarRutas(app);
-
-    app.listen(port, () => {
-        console.log(`Server running on port ${port}`);
-    });
+    try {
+        middlewares(app);
+        conectarDB();
+        routes(app);
+        app.listen(port);
+        console.log(`Server running on port: ${port}`);
+    } catch (err) {
+        console.log(`Server init failed: ${err}`);
+    }
 }
