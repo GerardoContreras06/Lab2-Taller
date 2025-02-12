@@ -1,0 +1,38 @@
+[{
+  "_id": {
+    "$oid": "67ab66fb5128b4b38efef093"
+  },
+  "name": "Perla",
+  "description": "Chihuahua",
+  "age": 2,
+  "type": "PERRO",
+  "keeper": {
+    "$oid": "67ab51d5b5c7cb8f3a3b43c3"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-11T15:04:27.498Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-11T15:04:27.498Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ab6ab05128b4b38efef09e"
+  },
+  "name": "Firulais",
+  "description": "Pastor Maya",
+  "age": 5,
+  "type": "PERRO",
+  "keeper": {
+    "$oid": "67ab52cc5128b4b38efef076"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-11T15:20:16.371Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-11T15:21:14.760Z"
+  }
+}]

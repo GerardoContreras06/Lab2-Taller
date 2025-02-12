@@ -15,13 +15,13 @@ export const getUsers = async (req = request, res = response) =>  {
         ])
 
         res.status(200).json({
-            succes: true,
+            success: true,
             total,
             users
         })
     } catch (error) {
         res.status(500).json({
-            succes: false,
+            success: false,
             msg: "Error al obtener usuarios",
             error
         })
@@ -36,7 +36,7 @@ export const getUsersById = async (req,res) => {
         if(!user){
             return res.status(404).json({
                 succes: false,
-                msg: "Uusuario no found"
+                msg: "Usuario no encontrado"
             })
         }
         res.status(200).json({
@@ -46,7 +46,7 @@ export const getUsersById = async (req,res) => {
     } catch (error) {
         res.status(500).json({
             success: false,
-            msg:"Error obtainning user",
+            msg:"Error al obtener usuario",
             error
         })
     }
@@ -65,14 +65,14 @@ export const updateUser = async (req, res = response) => {
         const user = await User.findByIdAndUpdate(id, data, {new: true});
 
         res.status(200).json({
-            succes: true,
+            success: true,
             msg: "Usuario Actualizado",
             user
         })
 
     }catch (error) {
         res.status(500).json({
-            succes: false,
+            success: false,
             msg: "Error al actualizar usuaio",
             error
         })
@@ -88,14 +88,14 @@ export const deleteUser = async (req, res) => {
         const authenticatedUser = req.user;
 
         res.status(200).json({
-            succes: true,
+            success: true,
             msg: 'Usuario desactivado',
             user,
             authenticatedUser
         })
     } catch (error){
         res.status(500).json({
-            succe: false,
+            success: false,
             msg: 'Error al desactivar usuario',
             error
         })

@@ -1,0 +1,79 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "PET",
+    "collectionId": "6322e06b-8e39-4fae-b84f-eb66b18bb649",
+    "dateExported": "2025-02-11T17:33:31.579Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "2dfa55b5-02ea-4760-8216-8490a5c9d134",
+            "colId": "6322e06b-8e39-4fae-b84f-eb66b18bb649",
+            "containerId": "",
+            "name": "NEW PET",
+            "url": "http://localhost:3002/adoptionSystem/v1/pets/",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-02-11T14:50:12.998Z",
+            "modified": "2025-02-11T15:20:16.381Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FiNTFkNWI1YzdjYjhmM2EzYjQzYzMiLCJpYXQiOjE3MzkyODYyMDYsImV4cCI6MTczOTI4OTgwNn0.iLrgqrTeDGw9W_rgO6oh61J3jELAWF_D2nyc88T1ZiE"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Firulais\",\n  \"description\": \"Pastor Maya\",\n  \"age\": 5,\n  \"type\": \"perro\",\n  \"email\": \"alejandro@gmail.com\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "acfdfa17-6de4-485d-acc3-26edc267965e",
+            "colId": "6322e06b-8e39-4fae-b84f-eb66b18bb649",
+            "containerId": "",
+            "name": "LIST",
+            "url": "http://localhost:3002/adoptionSystem/v1/pets/",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-02-11T15:14:24.789Z",
+            "modified": "2025-02-11T15:14:35.317Z",
+            "headers": []
+        },
+        {
+            "_id": "66a5c942-7a0c-421a-b3b1-8b0f0d8be2e0",
+            "colId": "6322e06b-8e39-4fae-b84f-eb66b18bb649",
+            "containerId": "",
+            "name": "GET BY ID",
+            "url": "http://localhost:3002/adoptionSystem/v1/pets/67ab66fb5128b4b38efef093",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2025-02-11T15:15:01.852Z",
+            "modified": "2025-02-11T15:16:27.022Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FiNTFkNWI1YzdjYjhmM2EzYjQzYzMiLCJpYXQiOjE3MzkyODYyMDYsImV4cCI6MTczOTI4OTgwNn0.iLrgqrTeDGw9W_rgO6oh61J3jELAWF_D2nyc88T1ZiE"
+                }
+            ]
+        },
+        {
+            "_id": "3917b5f3-7f6a-4df2-9e68-70c95a3d47b5",
+            "colId": "6322e06b-8e39-4fae-b84f-eb66b18bb649",
+            "containerId": "",
+            "name": "DELETE",
+            "url": "http://localhost:3002/adoptionSystem/v1/pets/67ab6ab05128b4b38efef09e",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2025-02-11T15:18:29.313Z",
+            "modified": "2025-02-11T15:21:14.775Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FiNTJjYzUxMjhiNGIzOGVmZWYwNzYiLCJpYXQiOjE3MzkyODcxNjIsImV4cCI6MTczOTI5MDc2Mn0.PBRfmZlWqam0Qa7uNzLYsQMs1AsOT8s1SCoR1hiVk2M"
+                }
+            ]
+        }
+    ],
+    "ref": "Slyd9sD_r0ny_WFgKoLbYXfQHop4RiK3kZj4LkkG-XC0lN60G2eHI8LqI52viR-Yj4UsGsQteITT3ff3sznWaw"
+}
