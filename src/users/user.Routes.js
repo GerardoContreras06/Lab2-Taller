@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { getUsers, getUsersById, updateUser, deleteUser } from "./user.controller.js";
+import { getUsers, getUsersById, updateUser, deleteUser, updatePassword } from "./user.controller.js";
 import { existeUsuarioByID } from "../helpers/db-validator.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { uploadProfilePicture } from "../middlewares/multer-upload.js"
@@ -42,6 +42,15 @@ router.delete(
         validarCampos
     ],
     deleteUser
+)
+
+router.put(
+    "/updatePassword/:id",
+    [
+        check("id").custom(existeUsuarioByID),
+        validarCampos
+    ],
+    updatePassword
 )
 
 export default router;
